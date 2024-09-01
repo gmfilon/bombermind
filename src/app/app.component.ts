@@ -12,13 +12,5 @@ import { FooterComponent } from "./footer/footer.component";
 })
 export class AppComponent {
   title = 'bombermind';
-  playerName: string = '';
-
-  onSubmit() {
-    if (this.playerName) {
-      console.log(`Player Name: ${this.playerName}`);
-      // You can add additional logic here, such as navigating to a different page or starting a game.
-      alert(`Welcome, ${this.playerName}! Let's play!`);
-    }
-  }
+  
 }

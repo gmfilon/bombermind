@@ -1,0 +1,11 @@
+<div class="container text-center offset-md-3 p-4">
+    <table>
+        @for (i of [1,2,3,4,5,6,7,8,9,10]; track $index) {
+            <tr>
+                @for (i of [1,2,3,4,5,6,7,8,9,10]; track $index) {
+                    <td><mine-field></mine-field></td>
+                }
+            </tr>
+        }
+    </table>
+</div>
