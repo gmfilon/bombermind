@@ -1,23 +1,40 @@
 <style>
+  body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .login-header {
+            margin-bottom: 1.5rem;
+        }
+        .login-header h1 {
+            font-size: 1.5rem;
+        }
 </style>
 
-<main class="mt-3">
-  <div class="offset-md-4 col-md-4 row">
-    <div class="container">
-      <img class="img-fluid img-contained" src="logo_I.webp" />
-    </div>
-  </div>
-  <div class="offset-1 offset-md-4 col-md-4 row mt-3 mb-3">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <form style="font-size: x-large;" (ngSubmit)="onSubmit()">
-          <div class="form-group">
+<main >
+  <div class="offset-md-4">
+    <div class="login-container">
+      <div class="container">
+        <img class="img-fluid img-contained" src="logo_I.webp" />
+      </div>
+      <div class="login-header mt-2 text-center">
+          <h1 style="color: #fff;">#B0M8ERM1ND</h1>
+      </div>
+      <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
             <label class="label" for="playerName">Enter your name</label>
             <input type="text" class="form-control" id="playerName" [(ngModel)]="playerName" name="playerName" required>
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Play</button>
-        </form>
-      </div>
+          <button type="submit" class="btn btn-primary w-100">Play!</button>
+      </form>
     </div>
   </div>
   <app-footer></app-footer>
