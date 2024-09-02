@@ -1,11 +1,13 @@
-<div class="login-parent">
-  <div class="login-container">
-    <form (ngSubmit)="onSubmit()">
-        <div class="mb-3 text-center">
-          <label class="label" for="playerName">Enter your name</label>
-          <input type="text" class="form-control" id="playerName" [(ngModel)]="playerName" name="playerName" required>
-        </div>
-        <button type="submit" class="btn btn-danger w-100">Play!</button>
-    </form>
+<div class="whole-bg">
+  <div class="login-parent">
+    <div class="login-container">
+      <form (ngSubmit)="onSubmit()">
+          <div class="mb-3 text-center">
+            <label class="label" for="playerName">Enter your name</label>
+            <input type="text" class="form-control" id="playerName" [(ngModel)]="playerName" name="playerName" required>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Play!</button>
+      </form>
+    </div>
   </div>
 </div>

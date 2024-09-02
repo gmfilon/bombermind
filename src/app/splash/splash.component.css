@@ -15,8 +15,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10em;
+    margin-top: -5em;
 }
 label {
     text-shadow:  5px 5px 2px red;
+}
+.whole-bg {
+    background-image: url('/logo_I.webp');
 }
