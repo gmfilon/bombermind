@@ -1,4 +1,4 @@
 export class User {
-    public static userName: String = '';
+    public static name: String = '';
 }
   

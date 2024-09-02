@@ -18,7 +18,7 @@ export class SplashComponent {
   onSubmit() {
     if (this.playerName) {
       console.log(`Player Name: ${this.playerName}`);
-      User.userName = this.playerName;
+      User.name = this.playerName;
       // You can add additional logic here, such as navigating to a different page or starting a game.
       alert(`Welcome, ${this.playerName}! Let's play!`);
       this.router.navigate(["/game-play"]);

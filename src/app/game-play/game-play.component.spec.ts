@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { User } from '../model/user.component';
 import { GamePlayComponent } from './game-play.component';
 
 describe('GamePlayComponent', () => {
