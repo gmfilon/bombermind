@@ -1,16 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-
 html {
-  min-height: 100%; /* initial minimal viewport height */
-  display: flex;
-  flex-direction: column;
+  min-height: 100%;
 }
 
 body {
-  /*background: linear-gradient(135deg, #001f3f, #0074D9);*/
-  /*height: 100vh;
-  width: 100vh;*/
-  flex-grow: 1;
   background-image: url('/logo_I.webp');
   background-repeat: no-repeat;
   background-size: cover;
