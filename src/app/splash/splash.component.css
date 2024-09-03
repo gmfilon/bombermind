@@ -22,4 +22,5 @@ label {
 }
 .whole-bg {
     background-image: url('/logo_I.webp');
+    align-items: center;
 }

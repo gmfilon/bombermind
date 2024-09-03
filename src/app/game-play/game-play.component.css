@@ -1,5 +1,5 @@
 .main {
-    background: linear-gradient(135deg, #001f3f, #0074D9);
+    width: 100%;
 }
 footer {
     background-color: black;
@@ -7,4 +7,19 @@ footer {
 nav {
     background-color: black;
      color: #fff;
+}
+.whole-bg {
+    background-image: url('/gameplay-bg.webp');
+}
+.dialog {
+    padding-left: 1em;
+    font-size: x-large;
+}
+.separator {
+    border-left: 3px solid #fff;
+    margin-left: 1em;
+}
+nav img {
+    margin-left: 1em;
+    width: 70px;
 }

@@ -1,27 +1,23 @@
-<div class="main">
-    <nav class="navbar navbar-expand-lg navbar-light p-2">
-        <a class="btn btn-default navbar-brand" href="#"><i class="bi bi-arrow-bar-left"></i>Salir</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="navbar-brand" href="#">¡Ey {{userName}}! ¡Vamos a desactivar las minas!</a>
-            </li>
-            </ul>
+<div class="whole-bg">
+    <div class="main">
+        <nav class="p-2">
+            <button class="btn btn-secondary" routerLink='/'><i class="bi bi-arrow-bar-left"></i>Salir</button> 
+            <img src="prota_III.png" />
+            <span class="dialog">
+                <i class="bi bi-chat-left-text"></i>&ensp;¡Ey {{userName}}! ¡Vamos a abrir los candados!
+            </span>
+        </nav>
+    
+        <div class="board p-4">
+            <table>
+                @for (i of rows; track $index) {
+                    <tr>
+                        @for (i of columns; track $index) {
+                            <td><mine-field></mine-field></td>
+                        }
+                    </tr>
+                }
+            </table>
         </div>
-    </nav>
-
-    <div class="board p-4">
-        <table>
-            @for (i of rows; track $index) {
-                <tr>
-                    @for (i of columns; track $index) {
-                        <td><mine-field></mine-field></td>
-                    }
-                </tr>
-            }
-        </table>
     </div>
 </div>

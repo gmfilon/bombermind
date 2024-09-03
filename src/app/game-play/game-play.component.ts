@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FieldComponent } from '../field/field.component';
 import { FooterComponent } from '../footer/footer.component';
 import { User } from '../model/user.component';
