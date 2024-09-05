@@ -4,11 +4,12 @@
             <button class="btn btn-secondary" routerLink='/'><i class="bi bi-arrow-bar-left"></i>Salir</button> 
             <img src="prota_III.png" />
             <span class="dialog">
-                <i class="bi bi-chat-left-text"></i>&ensp;¡Ey {{userName}}! ¡Vamos a abrir los candados!
+                <i class="bi bi-chat-left-text"></i>&ensp;¡Ey {{userName}}! ¡Vamos a desactivar las bombas!
             </span>
         </nav>
+        <app-bomb-screen></app-bomb-screen>
     
-        <div class="board p-4">
+        <div class="board">
             <table>
                 @for (i of rows; track $index) {
                     <tr>

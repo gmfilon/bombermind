@@ -23,3 +23,7 @@ nav img {
     margin-left: 1em;
     width: 70px;
 }
+.board {
+    display: flex;
+    justify-content: center;
+}

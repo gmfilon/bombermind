@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { FieldComponent } from '../field/field.component';
 import { FooterComponent } from '../footer/footer.component';
 import { User } from '../model/user.component';
+import { BombScreenComponent } from "../bomb-screen/bomb-screen.component";
 
 @Component({
   selector: 'game-play',
   standalone: true,
-  imports: [FieldComponent, FooterComponent],
+  imports: [FieldComponent, FooterComponent, BombScreenComponent],
   templateUrl: './game-play.component.html',
   styleUrl: './game-play.component.css'
 })
 export class GamePlayComponent {
 
-  columns: Number[] = new Array(15).fill(0);
-  rows: Number[] = new Array(10).fill(0);
+  columns: Number[] = new Array(7).fill(0);
+  rows: Number[] = new Array(5).fill(0);
   userName: String = User.name;
 
 }
