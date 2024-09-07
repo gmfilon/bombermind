@@ -3,11 +3,12 @@ import { FieldComponent } from '../field/field.component';
 import { FooterComponent } from '../footer/footer.component';
 import { User } from '../model/user.component';
 import { BombScreenComponent } from "../bomb-screen/bomb-screen.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'game-play',
   standalone: true,
-  imports: [FieldComponent, FooterComponent, BombScreenComponent],
+  imports: [FieldComponent, FooterComponent, BombScreenComponent, RouterModule],
   templateUrl: './game-play.component.html',
   styleUrl: './game-play.component.css'
 })
