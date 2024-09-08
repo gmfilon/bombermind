@@ -3,3 +3,6 @@ footer {
     position: fixed; 
     width: -webkit-fill-available;
 }
+img {
+    width: 30%;
+}

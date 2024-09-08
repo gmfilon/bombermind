@@ -6,7 +6,9 @@ footer {
 }
 nav {
     background-color: black;
-     color: #fff;
+    color: #fff;
+    align-items: center;
+    display: flex;
 }
 .whole-bg {
     background-image: url('/gameplay-bg.webp');
@@ -26,4 +28,7 @@ nav img {
 .board {
     display: flex;
     justify-content: center;
+}
+button {
+    background-color: #3c383f !important;
 }

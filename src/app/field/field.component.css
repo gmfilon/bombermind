@@ -1,6 +1,7 @@
 .bomb {
     width: 5em;
 }
-.btn {
+.field {
     margin: .5em;
+    padding-top: .5em;
 }
