@@ -14,7 +14,8 @@ import {
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-
+import {MathEquationProviderService} from '../math-equation/math-equation-provider.service';
+import { MathEquation } from '../math-equation/math-equation';
 
 @Component({
   selector: 'app-bomb-screen',
@@ -36,8 +37,16 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class BombScreenComponent {
   readonly dialogRef = inject(MatDialogRef<BombScreenComponent>);
+  equationString: String = "";
+  result: number = 0;
   //readonly data = inject<DialogData>(MAT_DIALOG_DATA);
   //readonly animal = model(this.data.animal);
+
+  constructor(mathEquationProviderService: MathEquationProviderService) {
+    var equation: MathEquation = mathEquationProviderService.buildMathEquation();
+    this.equationString = equation.getEquationString();
+    this.result = equation.getResult();
+  }
 
   submitAnswer(): void {
     this.dialogRef.close();
