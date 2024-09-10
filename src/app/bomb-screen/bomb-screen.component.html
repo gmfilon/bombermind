@@ -1,12 +1,33 @@
-<h2 mat-dialog-title>¡El tiempo está corriendo!</h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput />
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
+<div class="bomb-whole bomb-screen-bg">
+
+  <mat-dialog-content class="">
+    <mat-card class="" appearance="outlined">
+      <mat-card-content>
+        <h2>¡El tiempo está corriendo!</h2>
+        <p>Desactiva la bomba con la respuesta correcta antes de que se acabe el tiempo.</p>
+      </mat-card-content>
+    </mat-card>
+    <div class="digital-clock">
+      <span id="minutes">20</span>:<span id="seconds">20</span>
+    </div>
+    
+    <mat-card class="math" appearance="outlined">
+      
+      <mat-card-content>
+        <p>¿Cual es el resultado de esta cuenta?</p>
+        <div class="question">
+          22222 + 823 - 411 =&nbsp;
+          <mat-form-field>
+            <mat-label></mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      
+    </mat-card>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="desactivar" mat-flat-button cdkFocusInitial (click)="submitAnswer()">Desactivar</button>
+  </mat-dialog-actions>
+</div>

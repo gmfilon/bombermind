@@ -29,6 +29,7 @@ export class FieldComponent {
   openModal() {
     const dialogRef = this.dialog.open(BombScreenComponent, {
       //data: {name: this.name(), animal: this.animal()},
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {

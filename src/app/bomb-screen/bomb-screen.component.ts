@@ -13,6 +13,7 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
@@ -27,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   templateUrl: './bomb-screen.component.html',
   styleUrl: './bomb-screen.component.css'
@@ -37,7 +39,7 @@ export class BombScreenComponent {
   //readonly data = inject<DialogData>(MAT_DIALOG_DATA);
   //readonly animal = model(this.data.animal);
 
-  onNoClick(): void {
+  submitAnswer(): void {
     this.dialogRef.close();
   }
 
