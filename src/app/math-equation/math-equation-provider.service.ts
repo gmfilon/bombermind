@@ -10,7 +10,7 @@ export class MathEquationProviderService {
 
   public buildMathEquation() : MathEquation {
     var fst = this.getRandom(500, 1000);
-    var snd = this.getRandom(100, 500);
+    var snd = this.getRandom(4, 99);
     var trd = this.getRandom(2, 10);
 
     return this.getStrategy().build(fst, snd, trd);
@@ -23,7 +23,7 @@ export class MathEquationProviderService {
   private getRandom(min: number, max: number): number {
     const rand = Math.random();
     const range = max - min;
-    return min + (rand * range);
+    return Math.floor(min + (rand * range));
   }
 
 }
@@ -36,7 +36,7 @@ class Strategy1 implements EquationStrategy {
 
   build(fst: number, snd: number, trd: number): MathEquation {
     return new MathEquation(fst.toString() + " + ( " + snd.toString() + " * " + trd.toString() + " )", 
-      fst + (snd * trd));
+      fst + (snd * trd), 120);
   }
 
 }
