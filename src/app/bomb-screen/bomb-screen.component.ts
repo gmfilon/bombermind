@@ -86,7 +86,8 @@ export class BombScreenComponent implements OnInit {
   }
 
   private setSeconds() {
-    this.seconds = String(this.deadlineSeconds).padStart(2, '0');
+    var mins = Math.floor(this.deadlineSeconds / 60);
+    this.seconds = String(this.deadlineSeconds - (mins * 60)).padStart(2, '0');
   }
 
   submitAnswer(): void {
