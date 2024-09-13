@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, model, OnInit, signal} from '@angular/core';
+import {booleanAttribute, ChangeDetectionStrategy, Component, inject, model, OnInit, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
@@ -19,6 +19,7 @@ import { MathEquation } from '../math-equation/math-equation';
 import { delay, interval, Subscription } from 'rxjs';
 import { log } from 'console';
 import { SubmitDialogComponent } from '../submit-dialog/submit-dialog.component';
+import { ScoreCounterService } from '../score-counter.service';
 
 @Component({
   selector: 'app-bomb-screen',
@@ -48,13 +49,15 @@ export class BombScreenComponent implements OnInit {
   seconds: string = '00';
   private timerSubscription!: Subscription;
   answer!: number;
+  private scoreCounterService: ScoreCounterService;
 
-  constructor(mathEquationProviderService: MathEquationProviderService) {
+  constructor(mathEquationProviderService: MathEquationProviderService, 
+    scoreCounterService: ScoreCounterService) {
     var equation: MathEquation = mathEquationProviderService.buildMathEquation();
     this.equationString = equation.getEquationString();
     this.result = equation.getResult();
     this.deadlineSeconds = equation.getDeadlineSeconds();
-    console.log("Correct result: " + this.result);
+    this.scoreCounterService = scoreCounterService;
   }
 
   ngOnInit(): void {
@@ -94,10 +97,20 @@ export class BombScreenComponent implements OnInit {
     console.log("Anwer: " + this.answer);
     const dialogRef = this.dialog.open(SubmitDialogComponent, {
       disableClose: true,
-      data: this.answer
+      data: this.isCorrect()
     });
-    this.dialogRef.close(this.answer == this.result);
+    this.dialogRef.close(this.isCorrect());
     this.stopTimer();
+  }
+
+  private isCorrect(): boolean {
+    let isCorrect: boolean = this.answer == this.result;
+    if (isCorrect) {
+      this.scoreCounterService.addDefusedBomb();
+    } else {
+      this.scoreCounterService.addDetonatedBomb();
+    }
+    return isCorrect;
   }
 
 }
