@@ -18,6 +18,7 @@ import {MathEquationProviderService} from '../math-equation/math-equation-provid
 import { MathEquation } from '../math-equation/math-equation';
 import { delay, interval, Subscription } from 'rxjs';
 import { log } from 'console';
+import { SubmitDialogComponent } from '../submit-dialog/submit-dialog.component';
 
 @Component({
   selector: 'app-bomb-screen',
@@ -38,8 +39,8 @@ import { log } from 'console';
   styleUrl: './bomb-screen.component.css'
 })
 export class BombScreenComponent implements OnInit {
+  private readonly dialog = inject(MatDialog);
   private readonly dialogRef = inject(MatDialogRef<BombScreenComponent>);
-  private readonly ONE_SEC = 1000;
   private result: number = 0;
   private deadlineSeconds: number = 0;
   equationString: String = "";
@@ -91,6 +92,10 @@ export class BombScreenComponent implements OnInit {
 
   submitAnswer(): void {
     console.log("Anwer: " + this.answer);
+    const dialogRef = this.dialog.open(SubmitDialogComponent, {
+      disableClose: true,
+      data: this.answer
+    });
     this.dialogRef.close(this.answer == this.result);
     this.stopTimer();
   }
