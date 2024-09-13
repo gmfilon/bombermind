@@ -20,24 +20,35 @@ import { BombScreenComponent } from '../bomb-screen/bomb-screen.component';
   imports: [BombScreenComponent, MatButtonModule],
   templateUrl: './field.component.html',
   styleUrl: './field.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class FieldComponent {
 
   readonly dialog = inject(MatDialog);
+  imgScr: string = 'bomb_I.png';
+  btnColor: string = 'accent';
+  btnDisabled: boolean = false;
 
   openModal() {
+    this.btnDisabled = true;
     const dialogRef = this.dialog.open(BombScreenComponent, {
-      //data: {name: this.name(), animal: this.animal()},
       disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      if (result !== undefined) {
-        //this.animal.set(result);
-      }
+      this.handleResponse(result);
     });
+  }
+
+  private handleResponse(success: boolean) {
+    console.log("Deactivating success: " + success);
+    if (success) {
+      this.imgScr = 'deactivated_bomb_II.png';
+      this.btnColor = 'success';
+    } else {
+      this.imgScr = 'fire_II.png';
+      this.btnColor = 'error';
+    }
   }
 
 }

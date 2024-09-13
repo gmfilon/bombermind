@@ -42,19 +42,18 @@ export class BombScreenComponent implements OnInit {
   private readonly ONE_SEC = 1000;
   private result: number = 0;
   private deadlineSeconds: number = 0;
-  //private ticking: boolean = true;
   equationString: String = "";
   minutes: string = '00';
   seconds: string = '00';
   private timerSubscription!: Subscription;
-  //readonly data = inject<DialogData>(MAT_DIALOG_DATA);
-  //readonly animal = model(this.data.animal);
+  answer!: number;
 
   constructor(mathEquationProviderService: MathEquationProviderService) {
     var equation: MathEquation = mathEquationProviderService.buildMathEquation();
     this.equationString = equation.getEquationString();
     this.result = equation.getResult();
     this.deadlineSeconds = equation.getDeadlineSeconds();
+    console.log("Correct result: " + this.result);
   }
 
   ngOnInit(): void {
@@ -91,7 +90,8 @@ export class BombScreenComponent implements OnInit {
   }
 
   submitAnswer(): void {
-    this.dialogRef.close();
+    console.log("Anwer: " + this.answer);
+    this.dialogRef.close(this.answer == this.result);
     this.stopTimer();
   }
 

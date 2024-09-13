@@ -5,3 +5,9 @@
     margin: .5em;
     padding-top: .5em;
 }
+.mat-success {
+    background-color: darkgreen;
+}
+.mat-error {
+    background-color: darkred;
+}
