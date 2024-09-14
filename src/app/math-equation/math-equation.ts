@@ -1,5 +1,3 @@
-import { networkInterfaces } from "node:os";
-
 export class MathEquation {
 
     private equationString: String = "";

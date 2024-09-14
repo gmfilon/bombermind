@@ -4,6 +4,10 @@ html, body, app-root, .whole-bg {
   height: 100%;
   margin: 0;
 }
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 
 app-root {
   display: grid;

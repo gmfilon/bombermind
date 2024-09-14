@@ -1,40 +1,28 @@
-import {booleanAttribute, ChangeDetectionStrategy, Component, inject, model, OnInit, signal} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogModule,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MathEquationProviderService} from '../math-equation/math-equation-provider.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatDialog, MatDialogActions, MatDialogContent, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCard, MatCardContent } from '@angular/material/card';
+import { MathEquationProviderService } from '../math-equation/math-equation-provider.service';
 import { MathEquation } from '../math-equation/math-equation';
-import { delay, interval, Subscription } from 'rxjs';
-import { log } from 'console';
+import { interval, Subscription } from 'rxjs';
 import { SubmitDialogComponent } from '../submit-dialog/submit-dialog.component';
 import { ScoreCounterService } from '../score-counter.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-bomb-screen',
   standalone: true,
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
-    MatDialogTitle,
     MatDialogContent,
+    MatCard,
+    MatCardContent,
+    MatFormFieldModule,
     MatDialogActions,
-    MatDialogClose,
-    MatDialogModule,
-    MatCardModule
+    FormsModule,
+    MatInputModule,
+    MatButton
   ],
   templateUrl: './bomb-screen.component.html',
   styleUrl: './bomb-screen.component.css'
@@ -59,7 +47,7 @@ export class BombScreenComponent implements OnInit {
     this.deadlineSeconds = equation.getDeadlineSeconds();
     this.scoreCounterService = scoreCounterService;
 
-    console.log("Anwer: " + this.result);
+    //console.log("Anwer: " + this.result);
   }
 
   ngOnInit(): void {

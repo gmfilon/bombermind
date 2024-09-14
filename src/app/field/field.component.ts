@@ -1,25 +1,13 @@
-import {ChangeDetectionStrategy, Component, Inject, inject, model, signal} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { NgStyle } from '@angular/common';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatDialog } from '@angular/material/dialog';
 import { BombScreenComponent } from '../bomb-screen/bomb-screen.component';
-import { GamePlayComponent } from '../game-play/game-play.component';
 
 @Component({
   selector: 'mine-field',
   standalone: true,
-  imports: [BombScreenComponent, MatButtonModule, NgStyle],
+  imports: [MatButtonModule, NgStyle],
   templateUrl: './field.component.html',
   styleUrl: './field.component.css',
   changeDetection: ChangeDetectionStrategy.Default,

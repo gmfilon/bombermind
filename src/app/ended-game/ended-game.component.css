@@ -8,7 +8,7 @@
     border: 11px solid #f3a603;
 }
 .bomb-screen-bg {
-    background-image: url('/bomb_screen.webp');
+    background-image: url('/bomb_screen_sm.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
