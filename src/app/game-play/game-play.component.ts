@@ -5,6 +5,7 @@ import { User } from '../model/user.component';
 import { BombScreenComponent } from "../bomb-screen/bomb-screen.component";
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { ScoreCounterService } from '../score-counter.service';
 
 @Component({
   selector: 'game-play',
@@ -15,8 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class GamePlayComponent {
 
+  scoreService: ScoreCounterService;
   columns: Number[] = new Array(7).fill(0);
   rows: Number[] = new Array(5).fill(0);
   userName: String = User.name;
+
+  constructor(scoreService: ScoreCounterService) {
+    this.scoreService = scoreService;
+  }
 
 }

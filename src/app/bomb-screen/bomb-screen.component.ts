@@ -96,22 +96,22 @@ export class BombScreenComponent implements OnInit {
   }
 
   submitAnswer(): void {
-    const dialogRef = this.dialog.open(SubmitDialogComponent, {
-      disableClose: true,
-      data: this.isCorrect()
-    });
-    this.dialogRef.close(this.isCorrect());
-    this.stopTimer();
-  }
-
-  private isCorrect(): boolean {
-    let isCorrect: boolean = this.answer == this.result;
+    var isCorrect = this.isCorrect();
     if (isCorrect) {
       this.scoreCounterService.addDefusedBomb();
     } else {
       this.scoreCounterService.addDetonatedBomb();
     }
-    return isCorrect;
+    const dialogRef = this.dialog.open(SubmitDialogComponent, {
+      disableClose: true,
+      data: isCorrect
+    });
+    this.dialogRef.close(isCorrect);
+    this.stopTimer();
+  }
+
+  private isCorrect(): boolean {    
+    return this.answer == this.result;
   }
 
 }

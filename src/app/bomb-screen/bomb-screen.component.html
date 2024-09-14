@@ -17,7 +17,7 @@
         <p>¿Cual es el resultado de esta cuenta?</p>
         <div class="question">
           {{equationString}} =&nbsp;
-          <mat-form-field>
+          <mat-form-field (keyup.enter)="submitAnswer()">
             <mat-label></mat-label>
             <input type="number" step="1" matInput [(ngModel)]="answer"/>
           </mat-form-field>

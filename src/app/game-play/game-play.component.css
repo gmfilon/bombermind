@@ -32,3 +32,9 @@ nav img {
 button {
     background-color: #3c383f !important;
 }
+.example-spacer {
+    flex: 1 1 auto;
+}
+.score-img {
+    width: 2.5em !important;
+}

@@ -1,11 +1,17 @@
 <div class="whole-bg">
     <div class="main">
-        <nav class="p-2">
+        <nav class="">
             <button mat-flat-button class="basic" routerLink='/'><i class="bi bi-arrow-bar-left"></i>Salir</button> 
             <img src="prota_III.png" />
             <span class="dialog">
                 <i class="bi bi-chat-left-text"></i>&ensp;¡Ey {{userName}}! ¡Vamos a desactivar las bombas!
             </span>
+            <span class="example-spacer"></span>
+            <img class="score-img" src="ok.png" alt="">
+            <span>&nbsp;{{scoreService.getDefusedBombs()}}</span>
+            
+            <img class="score-img" src="fire_II.png" alt="">
+            <span style="margin-right: 1em;">&nbsp;{{scoreService.getDetonatedBombs()}}</span>
         </nav>
     
         <div class="board">
