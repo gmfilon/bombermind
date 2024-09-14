@@ -58,6 +58,8 @@ export class BombScreenComponent implements OnInit {
     this.result = equation.getResult();
     this.deadlineSeconds = equation.getDeadlineSeconds();
     this.scoreCounterService = scoreCounterService;
+
+    console.log("Anwer: " + this.result);
   }
 
   ngOnInit(): void {
@@ -94,7 +96,6 @@ export class BombScreenComponent implements OnInit {
   }
 
   submitAnswer(): void {
-    console.log("Anwer: " + this.answer);
     const dialogRef = this.dialog.open(SubmitDialogComponent, {
       disableClose: true,
       data: this.isCorrect()

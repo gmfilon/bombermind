@@ -1,9 +1,7 @@
-.bomb {
-    width: 5em;
-}
 .field {
-    margin: .5em;
+    margin: 1em;
     padding-top: .5em;
+    min-width: 8em;
 }
 .mat-success {
     background-color: darkgreen;

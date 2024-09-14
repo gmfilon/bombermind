@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject, model, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { NgStyle } from '@angular/common';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -17,7 +18,7 @@ import { BombScreenComponent } from '../bomb-screen/bomb-screen.component';
 @Component({
   selector: 'mine-field',
   standalone: true,
-  imports: [BombScreenComponent, MatButtonModule],
+  imports: [BombScreenComponent, MatButtonModule, NgStyle],
   templateUrl: './field.component.html',
   styleUrl: './field.component.css',
   changeDetection: ChangeDetectionStrategy.Default,
@@ -25,7 +26,8 @@ import { BombScreenComponent } from '../bomb-screen/bomb-screen.component';
 export class FieldComponent {
 
   readonly dialog = inject(MatDialog);
-  imgScr: string = 'bomb_I.png';
+  imgScr: string = 'deactivated_bomb_II.png';
+  imgSize: String = "5em";
   btnColor: string = 'accent';
   btnDisabled: boolean = false;
 
@@ -41,13 +43,14 @@ export class FieldComponent {
   }
 
   private handleResponse(success: boolean) {
-    console.log("Deactivating success: " + success);
     if (success) {
-      this.imgScr = 'deactivated_bomb_II.png';
+      this.imgScr = 'ok.png';
       this.btnColor = 'success';
+      this.imgSize = "3em";
     } else {
       this.imgScr = 'fire_II.png';
       this.btnColor = 'error';
+      this.imgSize = "3em";
     }
   }
 
