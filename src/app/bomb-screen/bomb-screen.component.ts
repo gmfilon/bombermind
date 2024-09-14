@@ -69,13 +69,14 @@ export class BombScreenComponent implements OnInit {
   }
 
   async startTimer(): Promise<void> {
-    interval(1000).subscribe((): void => {
+    this.timerSubscription = interval(1000).subscribe((): void => {
       if (this.deadlineSeconds > 0) {
         this.setMinutes();
         this.setSeconds();
         this.deadlineSeconds--;
       } else {
         this.stopTimer();
+        this.submitAnswer();
       }
     });
   }
