@@ -103,12 +103,13 @@ export class BombScreenComponent implements OnInit {
     } else {
       this.scoreCounterService.addDetonatedBomb();
     }
-    const dialogRef = this.dialog.open(SubmitDialogComponent, {
+    const submitDialogRef = this.dialog.open(SubmitDialogComponent, {
       disableClose: true,
       data: isCorrect
     });
     this.dialogRef.close(isCorrect);
     this.stopTimer();
+    setInterval(() => submitDialogRef.close(), 5000);
   }
 
   private isCorrect(): boolean {    

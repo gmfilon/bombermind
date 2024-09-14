@@ -34,4 +34,8 @@ export class ScoreCounterService {
   public addDefusedBomb() {
     this.defusedBombs++;
   }
+
+  public isEnded(): boolean {
+    return this.defusedBombs + this.detonatedBombs == this.totalBombs;
+  }
 }
