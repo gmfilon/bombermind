@@ -1,6 +1,12 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html, body, app-root, .whole-bg {
   height: 100%;
   margin: 0;
+}
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 app-root {
@@ -43,3 +49,8 @@ a:hover {
   text-decoration: underline;
 }
   
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: 'Courier New', Courier, monospace;
+}

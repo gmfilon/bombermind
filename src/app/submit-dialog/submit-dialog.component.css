@@ -1,0 +1,11 @@
+.submit-screen-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    min-width: 35em;
+    min-height: 35em;
+}
+::ng-deep .submit-screen-bg > mat-dialog-container {
+    background-color: transparent;
+}

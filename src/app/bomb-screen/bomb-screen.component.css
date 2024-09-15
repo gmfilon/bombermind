@@ -1,0 +1,65 @@
+.bomb-whole {
+    border: 11px solid #f3a603;
+}
+.bomb-screen-bg {
+    background-image: url('/bomb_screen_sm.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.digital-clock {
+    color: red;
+    background-color: #000;
+    border: 3px solid red;
+    padding: 40px 40px;
+    font-size: 70px;
+    letter-spacing: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px red;
+    font-family: 'Courier New', Courier, monospace;
+    width: 4em;
+    margin: .3em;
+}
+
+#minutes, #seconds {
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+}
+
+.math {
+    font-size: 1.5rem;
+    margin-right: 1em;
+}
+
+.question {
+    display: ruby;
+}
+
+mat-form-field {
+    max-width: 5em;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+mat-card {
+    background-color: #1E1E1E;
+    color: #00FF00;
+}
+
+.desactivar {
+    background-color: #fddf38;
+    color: #000;
+    font-weight: bolder;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

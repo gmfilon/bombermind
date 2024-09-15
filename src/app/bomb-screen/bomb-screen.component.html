@@ -1,0 +1,33 @@
+<div class="bomb-whole bomb-screen-bg">
+
+  <mat-dialog-content class="">
+    <mat-card class="" appearance="outlined">
+      <mat-card-content>
+        <h2>¡El tiempo está corriendo!</h2>
+        <p>Desactiva la bomba con la respuesta correcta antes de que se acabe el tiempo.</p>
+      </mat-card-content>
+    </mat-card>
+    <div class="digital-clock">
+      <span id="minutes">{{minutes}}</span>:<span id="seconds">{{seconds}}</span>
+    </div>
+    
+    <mat-card class="math" appearance="outlined">
+      
+      <mat-card-content>
+        <p>¿Cual es el resultado de esta cuenta?</p>
+        <div class="question">
+          {{equationString}} =&nbsp;
+          <mat-form-field (keyup.enter)="submitAnswer()">
+            <mat-label></mat-label>
+            <input type="number" step="1" matInput [(ngModel)]="answer"/>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      
+    </mat-card>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="desactivar" mat-flat-button cdkFocusInitial (click)="submitAnswer()">Desactivar</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,14 @@
+<div class="bomb-whole bomb-screen-bg">
+    <mat-dialog-content class="">
+        <mat-card appearance="outlined">
+        <mat-card-content>
+            <h2>¡El juego ha terminado!</h2>
+            <p>Has desactivado correctamente <span class="success">{{scoreCounterService.getDefusedBombs()}}</span> bombas de un total de {{scoreCounterService.getTotalBombs()}}.</p>
+            <p>Han estallado <span class="error">{{scoreCounterService.getDetonatedBombs()}}</span> bombas. Sigue practicando para poder desactivarlas todas.</p>
+        </mat-card-content>
+        </mat-card>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="desactivar" mat-flat-button cdkFocusInitial routerLink='/' (click)="close()">Inicio</button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,11 @@
+.field {
+    margin: 1em;
+    padding-top: .5em;
+    min-width: 8em;
+}
+.mat-success {
+    background-color: darkgreen;
+}
+.mat-error {
+    background-color: darkred;
+}

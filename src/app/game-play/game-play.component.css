@@ -6,7 +6,9 @@ footer {
 }
 nav {
     background-color: black;
-     color: #fff;
+    color: #00FF00;;
+    align-items: center;
+    display: flex;
 }
 .whole-bg {
     background-image: url('/gameplay-bg.webp');
@@ -22,4 +24,17 @@ nav {
 nav img {
     margin-left: 1em;
     width: 70px;
+}
+.board {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: #3c383f !important;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.score-img {
+    width: 2.5em !important;
 }

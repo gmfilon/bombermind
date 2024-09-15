@@ -3,3 +3,9 @@ footer {
     position: fixed; 
     width: -webkit-fill-available;
 }
+img {
+    width: 30%;
+}
+p {
+    margin: 0;
+}

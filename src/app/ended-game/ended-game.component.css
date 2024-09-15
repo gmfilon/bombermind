@@ -1,0 +1,27 @@
+.success {
+    color: #00FF00;
+}
+.error {
+    color: orangered;
+}
+.bomb-whole {
+    border: 11px solid #f3a603;
+}
+.bomb-screen-bg {
+    background-image: url('/bomb_screen_sm.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+mat-card {
+    background-color: #1E1E1E;
+    color: #00FF00;
+}
+
+.desactivar {
+    background-color: #fddf38;
+    color: #000;
+    font-weight: bolder;
+}
+
